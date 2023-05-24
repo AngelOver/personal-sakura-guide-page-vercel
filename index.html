@@ -23,15 +23,17 @@
     <div class="content"> 
      <div class="inner"> 
       <h1>1Chat引导页</h1> 
-      <p>国内免费且最快的ChatAI</p>
+      <h3><strong>国内免费且最快的ChatAI</strong></h3>
+      <h3><strong><span id="Os">6</span>秒之后将自动前往第一个镜像站。。。。。</strong></h3>
      </div> 
     </div> 
     <nav> 
      <ul> 
-      <li> <a target="_blank" href="https://1chat.c3r.ink">进入1Chat网站 </a></li> 
+      <li> <a  href="https://1chat.c3r.ink">进入1Chat网站 </a></li>
+      <li> <a   href="https://1.1chat.vin">进入镜像站2&nbsp; </a></li>
       <li> <a target="_blank" href="">Q群：791303042</a></li>
-      <li> <a target="_blank" href="https://1.ai1.fun">备用站点</a></li>
-      <!--<li><a href="#elements">Elements</a></li>--> 
+      <li> <a target="_blank" href="https://1.ai1.fun">(请收藏)备用导航</a></li>
+      <!--<li><a href="#elements">Elements</a></li>-->
      </ul> 
     </nav> 
    </header> 
@@ -44,8 +46,7 @@
 	<p class="copyright">你在阳光下盛放 而我在阴郁的天空下自得其乐</p> 
     <p class="copyright"> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2971802058&amp;site=qq&amp;menu=yes"> <img src="images\svg\qq.svg" width="30" alt="QQ" title="QQ" />&nbsp;&nbsp;</a> <a target="_blank" href="mailto:suinian666@gmail.com"> <img src="images\svg\mail.svg" width="30" alt="Mail" title="Mail" />&nbsp;&nbsp;</a> <a target="_blank" href="/money_receiving_QR_code"> <img src="images\svg\money_receiving_QR_code.svg" width="30" alt="给我打钱" title="给我打钱" />&nbsp;&nbsp;</a> <a target="_blank" href="https://github.com/nianbroken"> <img src="images\svg\github.svg" width="30" alt="Github" title="Github" />&nbsp;&nbsp;</a> <a target="_blank" href="https://gitee.com/nianbroken"> <img src="images\svg\gitee.svg" width="30" alt="Gitee" title="Gitee" />&nbsp;&nbsp;</a> <a target="_blank" href="http://www.coolapk.com/u/1315644"> <img src="images\svg\coolapk.svg" width="30" alt="Coolapk" title="Coolapk" /></a> </p> 
    -->
-   
-   </footer> 
+   </footer>
   </div> 
   <canvas id="sakura" style="z-index: 2;
     position: fixed;
@@ -61,10 +62,26 @@
   <script src="assets/js/browser.min.js"></script> 
   <script src="assets/js/breakpoints.min.js"></script> 
   <script src="assets/js/util.js"></script> 
-  <script src="assets/js/main.js"></script> 
+  <script src="assets/js/main.js"></script>
+
+  <script>
+   var Os=document.getElementById("Os");
+   var num=6;
+   var timer=setInterval(function () {
+    num--;
+    Os.innerText=num;
+    if(num==0){
+     window.location.href= $("nav ul li:first-child a").attr("href") ;
+     clearInterval(timer);
+    }
+   },1000)
+  </script>
+
   <style>canvas { padding:0; margin:0; }</style> 
   <!-- sakura shader --> 
   <script id="sakura_point_vsh" type="x-shader/x_vertex">
+
+
 uniform mat4 uProjection;
 uniform mat4 uModelview;
 uniform vec3 uResolution;
@@ -1152,6 +1169,6 @@ window.addEventListener('load', function(e) {
 (function (w, r) {
     w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
 })(window, 'equestAnimationFrame');
-</script>  
+</script>
  </body>
 </html>
