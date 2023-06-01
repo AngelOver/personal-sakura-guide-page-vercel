@@ -70,12 +70,27 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-   var Os=document.getElementById("Os");
-   var num=3;
+	  
+	  
+	  var url = window.location.href;
+	  // 解析 URL，获取参数部分
+	  var searchParams = new URLSearchParams(new URL(url).search);
+	  // 从参数中获取 time 的值
+	  var time = searchParams.get("time");
+	  var waitTime = 3
+	  if(!!time){
+	  	waitTime = parseInt(time)  
+	  }
+	  	  
+	  
+	var Os=document.getElementById("Os");
+	var num=waitTime;
    var timer=setInterval(function () {
-    num--;
+	if(num>0){
+	  num--;
+	}
     Os.innerText=num;
-    if(num==0){
+    if(num==0||num < 0){
      window.location.href= $("nav ul li:first-child a").attr("href") ;
      clearInterval(timer);
     }
