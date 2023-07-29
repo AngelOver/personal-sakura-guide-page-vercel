@@ -31,9 +31,9 @@
     </div> 
     <nav> 
      <ul> 
-      <li> <a  href="https://15chat.littlewheat.com">进入1Chat网站 </a></li>
-      <li> <a   href="https://8.a1r.cc">镜像站2 </a></li>
-      <li> <a   href="https://7.c11r.cc">镜像站3 </a></li>
+      <li> <a  href="https://11.a1r.cc">进入1Chat网站 </a></li>
+      <li> <a   href="https://11.c11r.cc">镜像站2 </a></li>
+      <li> <a   href="https://11.c1r.ink">镜像站3 </a></li>
       <li> <a target="_blank" href="">Q群：186244429</a></li>
       <li> <a target="_blank" href="https://0.0chat.cc">(请收藏)备用导航</a></li>
       <!--<li><a href="#elements">Elements</a></li>-->
@@ -89,7 +89,7 @@
 	}
     Os.innerText=num;
     if(num==0||num < 0){
-     window.location.href= $("nav ul li:first-child a").attr("href") ;
+	window.location.href= $("nav ul li a").eq(Math.floor(Math.random() * 3)) .attr("href").replaceAll('11.',(11+Math.floor(Math.random() * 3))+'.') ;
      clearInterval(timer);
     }
    },1000)
